@@ -547,6 +547,15 @@
                 });
 
                 if (response.ok) {
+                    // Reset form fields
+                    document.getElementById('title').value = '';
+                    document.getElementById('url').value = '';
+                    document.getElementById('price').value = '';
+                    document.getElementById('note').value = '';
+                    document.getElementById('image').value = '';
+                    document.getElementById('imageFile').value = '';
+                    document.getElementById('imagePreview').style.display = 'none';
+                    
                     closeModal('addItemModal');
                     loadWishlist();
                 } else {
