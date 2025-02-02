@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  dumbwish:
+    build: .
+    container_name: dumbwish
+    ports:
+      - "3000:3000"
+    environment:
+      - DUMBDO_PIN=1234  # Change this to your desired PIN (4-10 digits)
+      - DUMBWISH_CURRENCY=USD # Change this to your desired currency code (e.g., EUR, GBP, JPY)
+      - DUMBWISH_TITLE=DumbWish # Change this to customize the app title
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped 
